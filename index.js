@@ -15,8 +15,15 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
+function createMenuItem(food, price, category){
     /*Your code here*/
+    const menuItem = {
+      name: food,
+      price: price,
+      category: category
+    }
+
+    return menuItem
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -28,6 +35,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
+console.log(createMenuItem("hot dog", 10, "lunch"));
+console.log(createMenuItem("cereal", 2, "breakfast"));
+console.log(createMenuItem("chicken and rice", 15, "dinner"));
 
 
 
@@ -47,8 +57,18 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount: function (person) {
+    switch (person) {
+      case "teacher":
+      case "pupil":
+        return this.price * 0.25;
+      default:
+        return this.price * 0.10;
+    }
+  }
 }
+
+console.log(burger.discount('public'));
 
 
 
@@ -68,7 +88,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-
+console.log(reviews[5]);
 
 
 
