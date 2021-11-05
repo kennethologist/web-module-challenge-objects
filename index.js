@@ -60,10 +60,10 @@ const burger = {
   discount: function (person) {
     switch (person) {
       case "teacher":
-      case "pupil":
-        return this.price * 0.25;
+      case "student":
+        return  this.price - this.price * 0.25;
       default:
-        return this.price * 0.10;
+        return this.price - this.price * 0.10;
     }
   }
 }
@@ -97,6 +97,8 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
+console.log(reviews);
 
 
 
@@ -111,8 +113,11 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
-function addReview(/*Your Code Here */){
+function addReview(reviews, name, rating, feedback){
   /*Your Code Here */
+  reviews.push({name: name, rating: rating, feedback: feedback });
+
+  return reviews;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -126,10 +131,14 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
+function getReviewByIndex(reviews, reviewIndex) {
   /*Your code here*/
+  let name = reviews[reviewIndex].name;
+  let rating = reviews[reviewIndex].rating;
+  let feedback = reviews[reviewIndex].feedback;
+  return `${name} gave the restaurant a ${rating} star review, and their feedback was: ${feedback}`;
 }
-
+console.log(getReviewByIndex(reviews,0));
 
   
 
@@ -145,8 +154,16 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
+function getLastReview(reviews) {
   /*Your code here*/
+  let lastIndex = reviews.length - 1
+  let name = reviews[lastIndex].name;
+  let rating = reviews[lastIndex].rating;
+  let feedback = reviews[lastIndex].feedback;
+
+
+  return `${name} gave the restaurant a ${rating} star review, and their feedback was: ${feedback}`;
+
 } 
 
 
